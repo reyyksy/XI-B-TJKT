@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Kelas X TJKT B</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">X TJKT B.</a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#pengurus">Pengurus Kelas</a></li>
+                <li><a href="jadwal.html">Jadwal Pelajaran</a></li>
+                <li><a href="siswa.html">Siswa & Piket</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="home" class="hero section-padding">
+        <div class="container hero-content">
+            <img src="https://placehold.co/800x400/e2e8f0/475569?text=Foto+Kelas+Kosong" alt="Foto Kelas" class="hero-img">
+            
+            <div class="hero-text">
+                <h1>Selamat Datang di Kelas <span class="text-blue">X TJKT B</span></h1>
+                <p class="subtitle">Tahun Ajaran 2024/2025</p>
+                <p class="student-count">Jumlah Siswa: <strong>36 Siswa</strong></p>
+                
+                <div class="hero-buttons">
+                    <a href="siswa.html" class="btn btn-primary">Lihat Daftar Siswa & Piket</a>
+                    <a href="jadwal.html" class="btn btn-outline">Jadwal Pelajaran Lengkap</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="pengurus" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Struktur Organisasi</h2>
+            
+            <div class="org-tree">
+                <div class="tree-level">
+                    <div class="org-node">
+                        <span class="node-title">Wali Kelas</span>
+                        <div class="popup-card">
+                            <img src="https://ui-avatars.com/api/?name=Wali+Kelas&background=eff6ff&color=2563eb&size=150" alt="Wali Kelas">
+                            <h3>Nama Guru</h3>
+                            <p>Wali Kelas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tree-line"></div>
+
+                <div class="tree-level">
+                    <div class="org-node">
+                        <span class="node-title">Ketua Kelas</span>
+                        <div class="popup-card">
+                            <img src="https://ui-avatars.com/api/?name=Ketua+Kelas&background=eff6ff&color=2563eb&size=150" alt="Ketua">
+                            <h3>Nama Ketua</h3>
+                            <p>Ketua Kelas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tree-line"></div>
+
+                <div class="tree-level branch-level">
+                    <div class="org-node">
+                        <span class="node-title">Wakil Ketua</span>
+                        <div class="popup-card">
+                            <img src="https://ui-avatars.com/api/?name=Wakil+Ketua&background=eff6ff&color=2563eb&size=150" alt="Wakil">
+                            <h3>Nama Wakil</h3>
+                            <p>Wakil Ketua</p>
+                        </div>
+                    </div>
+                    
+                    <div class="org-node">
+                        <span class="node-title">Sekretaris</span>
+                        <div class="popup-card">
+                            <img src="https://ui-avatars.com/api/?name=Sekretaris&background=eff6ff&color=2563eb&size=150" alt="Sekretaris">
+                            <h3>Nama Sekretaris</h3>
+                            <p>Sekretaris</p>
+                        </div>
+                    </div>
+
+                    <div class="org-node">
+                        <span class="node-title">Bendahara</span>
+                        <div class="popup-card">
+                            <img src="https://ui-avatars.com/api/?name=Bendahara&background=eff6ff&color=2563eb&size=150" alt="Bendahara">
+                            <h3>Nama Bendahara</h3>
+                            <p>Bendahara</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="section-padding text-center">
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 10px;">Informasi Kelas Lainnya</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Akses jadwal pelajaran lengkap dan data anggota kelas melalui tombol di bawah.</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="jadwal.html" class="btn btn-primary">Buka Jadwal Pelajaran &rarr;</a>
+                <a href="siswa.html" class="btn btn-outline">Buka Daftar Siswa & Piket &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="instagram" class="section-padding bg-light text-center">
+        <div class="container">
+            <h2 class="section-title">Sosial Media</h2>
+            <div class="ig-card">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <h3>@xtjktb.official</h3>
+                <p>Follow Instagram kelas kita untuk melihat kegiatan seru lainnya!</p>
+                <a href="https://instagram.com/" target="_blank" class="btn btn-primary mt-1">Kunjungi Instagram</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Website Kelas <strong>X TJKT B</strong>. Dibuat dengan semangat.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
