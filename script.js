@@ -14,27 +14,5 @@ links.forEach(link => {
 
 const orgNodes = document.querySelectorAll('.org-node');
 
-orgNodes.forEach(node => {
-    node.addEventListener('mouseenter', () => {
-        node.classList.add('active-popup');
-    });
-
-    node.addEventListener('mouseleave', () => {
-        node.classList.remove('active-popup');
-    });
-
-    node.addEventListener('click', (e) => {
-        orgNodes.forEach(n => {
-            if (n !== node) {
-                n.classList.remove('active-popup');
-            }
-        });
-        node.classList.toggle('active-popup');
-    });
-});
-
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.org-node')) {
-        orgNodes.forEach(node => node.classList.remove('active-popup'));
-    }
-});
+// Tampilkan semua popup-card secara default tanpa perlu klik/hover
+orgNodes.forEach(node => node.classList.add('active-popup'));
