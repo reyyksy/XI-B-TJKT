@@ -299,32 +299,42 @@ tr:hover {
     }
 }
 
+/* Struktur Organisasi - Grid Layout */
 .org-tree {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
 }
 
-.tree-level {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+/* Rows dengan jumlah kolom yang berbeda */
+.org-row {
+    display: grid;
+    gap: 24px;
     width: 100%;
-    flex-wrap: wrap;
-    z-index: 2;
+    justify-items: center;
 }
 
-.branch-level {
-    max-width: 600px;
+/* Baris dengan 1 item (Wali Kelas) - centered */
+.org-row-1 {
+    grid-template-columns: 1fr;
+    max-width: 240px;
+    margin: 0 auto;
 }
 
-.tree-line {
-    width: 2px;
-    height: 30px;
-    background-color: var(--primary-color);
-    margin: 10px 0;
+/* Baris dengan 2 items (Ketua & Wakil) - centered */
+.org-row-2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 520px;
+    margin: 0 auto;
 }
 
+/* Baris dengan 4 items (Sekretaris, Bendahara, Seksi) - centered */
+.org-row-4 {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
 .org-node {
     display: flex;
@@ -338,7 +348,7 @@ tr:hover {
     cursor: default;
     position: relative;
     transition: all 0.18s ease;
-    margin: 6px;
+    width: 100%;
 }
 
 .node-title {
@@ -346,11 +356,13 @@ tr:hover {
     background-color: white;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-    padding: 6px 14px;
+    padding: 8px 16px;
     border-radius: 999px;
     font-weight: 700;
     box-shadow: var(--shadow);
     font-size: 0.95rem;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .org-node .popup-card {
@@ -359,12 +371,12 @@ tr:hover {
     background: white;
     border-radius: var(--radius);
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    padding: 12px;
-    width: 200px;
+    padding: 16px;
+    width: 210px;
     text-align: center;
     opacity: 1;
     visibility: visible;
-    margin-top: 10px;
+    margin-top: 12px;
     z-index: 10;
     pointer-events: auto;
 }
@@ -378,7 +390,7 @@ tr:hover {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     border: 3px solid var(--bg-light);
 }
 
@@ -386,6 +398,7 @@ tr:hover {
     font-size: 1.05rem;
     margin-bottom: 4px;
     color: var(--text-main);
+    font-weight: 600;
 }
 
 .popup-card p {
@@ -393,73 +406,95 @@ tr:hover {
     color: var(--text-muted);
 }
 
-/* Adjust branch width so the 4-person level fits nicely */
-.branch-level {
-    max-width: 900px;
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-/* sizing rules: make branch rows fit 4 items on desktop */
-.tree-level:not(.branch-level) .org-node {
-    flex: 0 1 220px;
-    max-width: 240px;
-}
-.branch-level .org-node {
-    flex: 0 1 calc(25% - 18px);
-    max-width: 220px;
-}
-
-/* Make tree-line taller to visually connect levels */
-.tree-line {
-    width: 2px;
-    height: 26px;
-    background-color: var(--primary-color);
-    margin: 18px 0;
-}
-
-@media screen and (max-width: 900px) {
-    .branch-level .org-node {
-        flex: 0 1 calc(50% - 12px);
-        max-width: 48%;
+/* Mobile Responsif - Tablet (768px dan bawah) */
+@media screen and (max-width: 768px) {
+    .org-row-4 {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 480px;
     }
-    .tree-level:not(.branch-level) .org-node {
-        flex: 0 1 45%;
-        max-width: 45%;
+    
+    .org-row-2 {
+        max-width: 100%;
     }
-    .org-tree {
-        padding: 0 10px;
-    }
+    
     .popup-card {
-        width: 170px;
+        width: 180px;
+        padding: 14px;
     }
+    
     .popup-card img {
-        width: 64px;
-        height: 64px;
+        width: 70px;
+        height: 70px;
+        margin-bottom: 10px;
     }
+    
+    .popup-card h3 {
+        font-size: 0.95rem;
+    }
+    
+    .popup-card p {
+        font-size: 0.85rem;
+    }
+    
     .node-title {
-        padding: 6px 10px;
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    
+    .org-row {
+        gap: 20px;
+    }
+    
+    .org-tree {
+        gap: 30px;
+    }
+}
+
+/* Mobile kecil (480px dan bawah) */
+@media screen and (max-width: 480px) {
+    .org-row-1 {
+        max-width: 100%;
+    }
+    
+    .org-row-2 {
+        max-width: 100%;
+    }
+    
+    .org-row-4 {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+    }
+    
+    .popup-card {
+        width: 160px;
+        padding: 12px;
+    }
+    
+    .popup-card img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 8px;
+    }
+    
+    .popup-card h3 {
         font-size: 0.9rem;
     }
-}
-
-@media screen and (max-width: 480px) {
-    .branch-level .org-node, .tree-level:not(.branch-level) .org-node {
-        flex: 0 1 48%;
-        max-width: 48%;
+    
+    .popup-card p {
+        font-size: 0.8rem;
     }
-    .popup-card {
-        width: 150px;
-        padding: 10px;
+    
+    .node-title {
+        font-size: 0.8rem;
+        padding: 5px 10px;
     }
-    .popup-card img {
-        width: 56px;
-        height: 56px;
+    
+    .org-row {
+        gap: 16px;
     }
-    .section-padding {
-        padding: 40px 0;
+    
+    .org-tree {
+        gap: 24px;
     }
 }
 
@@ -540,4 +575,30 @@ footer {
     .popup-card {
         width: 160px;
     }
+    .page-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.page-header h1{
+    font-size:2.2rem;
+    font-weight:700;
+    margin:0;
+}
+
+.student-count{
+    font-size:1.2rem;
+    font-weight:600;
+    color:#475569;
+    margin:0;
+}
+
+.student-count span{
+    color:#2563eb;
+    font-weight:700;
+}
 }
