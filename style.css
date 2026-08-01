@@ -60,6 +60,10 @@ ul {
     color: var(--primary-color);
 }
 
+.text-black {
+    color: #0f172a;
+}
+
 .fw-500 {
     font-weight: 500;
 }
