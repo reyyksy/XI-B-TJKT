@@ -105,7 +105,7 @@ const students = [
         role: "Anggota Kelas",
         img: "images/contoh.jpg",
         socials: [
-            { type: "instagram", url: "" }
+            { type: "instagram", url: "https://www.instagram.com/bettercallloxxie/" }
         ]
     },
     {
